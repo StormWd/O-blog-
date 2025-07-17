@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="../style/global.css">
+    <link rel="icon" type="image/x-icon" href="../Iscariotes/images/icon.ico">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>O Blog</h1>
+            <p>é um blog</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="Development.html">Desenvolvimento</a></li>
+                <li><a href="About.html">Sobre</a></li>
+                <li><a href="Archive.html" class="active">Arquivo</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-wrapper">
+            <main>
+                <section class="archive-controls">
+                    <h2>Buscar no Arquivo</h2>
+                    <div class="filter-group">
+                        <label for="searchInput">Buscar:</label>
+                        <input type="text" id="searchInput" placeholder="Digite palavras-chave...">
+                        
+                        <label for="categoryFilter">Categoria:</label>
+                        <select id="categoryFilter">
+                            <option value="">Todas</option>
+                            <option value="tech">Tecnologia</option>
+                            <option value="underground">Underground</option>
+                            <option value="hacking">Hacking</option>
+                            <option value="filosofia">Filosofia</option>
+                            <option value="random">Random</option>
+                        </select>
+                        
+                        <label for="yearFilter">Ano:</label>
+                        <select id="yearFilter">
+                            <option value="">Todos</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                        </select>
+                        
+                        <button onclick="filterArchive()">Filtrar</button>
+                        <button onclick="clearFilters()">Limpar</button>
+                    </div>
+                </section>
+
+                

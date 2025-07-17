@@ -1,0 +1,728 @@
+/* 1. ESTILOS GERAIS E RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #ffff00; 
+    line-height: 1.4;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/*2. LAYOUT PRINCIPAL */
+
+/* Cabeçalho */
+header {
+    background-color: #ffff00;
+    color: #000;
+    padding: 20px 0;
+    text-align: center;
+    border: 2px solid #ffff00;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* NAVEBAR */
+nav {
+    background-color: #333;
+    border: 1px solid #ffff00;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav li {
+    position: relative;
+}
+
+nav a {
+    display: block;
+    color: #ffff00;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-right: 1px solid #ffff00;
+    transition: background-color 0.3s;
+}
+
+
+nav a:hover,
+nav a.active {
+    background-color: #ffff00;
+    color: #000;
+}
+
+
+.main-wrapper {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+main {
+    flex: 2;
+}
+
+aside {
+    flex: 1; 
+    background-color: #111;
+    border: 1px solid #ffff00;
+    padding: 20px;
+    height: fit-content; 
+}
+
+aside h3 {
+    color: #ffff00;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ffff00;
+    padding-bottom: 5px;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside li {
+    margin-bottom: 8px;
+}
+
+aside a {
+    color: #ffff00;
+    text-decoration: none;
+}
+
+aside a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    border: 1px solid #ffff00;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer p {
+    color: #999;
+}
+
+
+
+
+/*3. COMPONENTES E SEÇÕES ESPECÍFICAS*/
+
+
+
+/* MENU DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 200px;
+    border: 1px solid #ffff00;
+    border-top: none;
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    border-right: none;
+    border-bottom: 1px solid #ffff00;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+/* Posts DO BLOG (PAGINA INDEX) */
+article {
+    background-color: #111;
+    border: 1px solid #ffff00;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+article h2 {
+    color: #ffff00;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    text-transform: uppercase;
+}
+
+.post-meta {
+    color: #999;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+article p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ffff00;
+    margin: 15px 0;
+    display: block;
+}
+
+/* FORMULARIO DOS POST, DEVOPS*/
+.form-section {
+    background-color: #111;
+    border: 1px solid #ffff00;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-section h3 {
+    color: #ffff00;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ffff00;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    color: #ffff00;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    background-color: #000;
+    border: 1px solid #ffff00;
+    color: #ffff00;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="file"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+input[type="file"] {
+    padding: 5px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    background-color: #ffff00;
+    color: #000;
+    border: 1px solid #ffff00;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    margin-right: 10px;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #000;
+    color: #ffff00;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ffff00;
+    color: #000;
+    border: 1px solid #ffff00;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: #000;
+    color: #ffff00;
+}
+
+.success-message {
+    background-color: #004400;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 15px;
+    margin-top: 20px;
+    display: none;
+}
+
+/* SECTIONS GENERICAS */
+.content-section {
+    background-color: #111;
+    border: 1px solid #ffff00;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.content-section h2 {
+    color: #ffff00;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ffff00;
+    padding-bottom: 10px;
+}
+
+.content-section h3 {
+    color: #ffff00;
+    margin: 20px 0 10px 0;
+    font-size: 1.3em;
+}
+
+.content-section p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* PROJETOS */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.project-item {
+    background-color: #222;
+    border: 1px solid #ffff00;
+    padding: 20px;
+    transition: border-color 0.3s;
+}
+
+.project-item:hover {
+    border-color: #fff;
+}
+
+.project-title {
+    color: #ffff00;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.project-status {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+    border: 1px solid;
+}
+
+.status-active { color: #00ff00; border-color: #00ff00; }
+.status-maintenance { color: #ffff00; border-color: #ffff00; }
+.status-archived { color: #999; border-color: #999; }
+
+.project-description {
+    color: #ccc;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.project-tech {
+    margin-bottom: 15px;
+}
+
+.tech-tag {
+    background-color: #333;
+    color: #ffff00;
+    padding: 2px 6px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 0.8em;
+    border: 1px solid #ffff00;
+    display: inline-block;
+}
+
+.project-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.project-link {
+    color: #ffff00;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ffff00;
+    font-size: 0.9em;
+    transition: all 0.3s;
+}
+
+.project-link:hover {
+    background-color: #ffff00;
+    color: #000;
+}
+
+/* HABILIDADES*/
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.skill-category {
+    background-color: #222;
+    border: 1px solid #ffff00;
+    padding: 20px;
+}
+
+.skill-category h4 {
+    color: #ffff00;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ffff00;
+    padding-bottom: 5px;
+}
+
+.skill-item {
+    margin-bottom: 10px;
+}
+
+.skill-name {
+    color: #ffff00;
+    font-weight: bold;
+}
+
+.skill-level {
+    height: 10px;
+    background-color: #333;
+    border: 1px solid #ffff00;
+    margin-top: 5px;
+    position: relative;
+}
+
+.skill-progress {
+    height: 100%;
+    background-color: #ffff00;
+    transition: width 0.3s;
+}
+
+/*TIMELINE*/
+.timeline {
+    border-left: 2px solid #ffff00;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline-item::before {
+    content: '●';
+    position: absolute;
+    left: -26px;
+    color: #ffff00;
+    font-size: 1.2em;
+}
+
+.timeline-date, .timeline-year {
+    color: #ffff00;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.timeline-title {
+    color: #fff;
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.timeline-description {
+    color: #ccc;
+    line-height: 1.4;
+}
+
+
+.ascii-art {
+    background-color: #000;
+    border: 1px solid #ffff00;
+    padding: 15px;
+    margin: 20px 0;
+    overflow-x: auto;
+    white-space: pre;
+    font-size: 0.8em;
+}
+
+/*CONTROLES DA PAGINA ARQUIVO */
+.archive-controls {
+    background-color: #111;
+    border: 1px solid #ffff00;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.archive-controls h2 {
+    color: #ffff00;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.filter-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-group label {
+    color: #ffff00;
+    font-weight: bold;
+}
+
+.filter-group select, .filter-group input {
+    background-color: #000;
+    color: #ffff00;
+    border: 1px solid #ffff00;
+    padding: 8px;
+    font-family: 'Courier New', monospace;
+}
+
+.filter-group button {
+    background-color: #ffff00;
+    color: #000;
+    border: 1px solid #ffff00;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+}
+
+.filter-group button:hover {
+    background-color: #000;
+    color: #ffff00;
+}
+
+/*lISTA DOS ARCHIVES*/
+.archive-section {
+    background-color: #111;
+    border: 1px solid #ffff00;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.archive-year {
+    margin-bottom: 30px;
+}
+
+.archive-year h3 {
+    color: #ffff00;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-left: 4px solid #ffff00;
+    padding-left: 10px;
+}
+
+.archive-month {
+    margin-bottom: 25px;
+    padding-left: 20px;
+}
+
+.archive-month h4 {
+    color: #ffff00;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.post-list {
+    list-style: none;
+    padding-left: 15px;
+}
+
+.post-item {
+    background-color: #222;
+    border: 1px solid #333;
+    padding: 10px;
+    margin-bottom: 8px;
+    transition: border-color 0.3s;
+}
+
+.post-item:hover {
+    border-color: #ffff00;
+}
+
+.post-title {
+    color: #ffff00;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.post-excerpt {
+    color: #ccc;
+    font-size: 0.9em;
+    line-height: 1.3;
+}
+
+.post-tags {
+    margin-top: 8px;
+}
+
+.tag {
+    background-color: #333;
+    color: #ffff00;
+    padding: 2px 6px;
+    margin-right: 5px;
+    font-size: 0.8em;
+    border: 1px solid #ffff00;
+}
+
+
+/*RESPONSIVO*/
+
+/*PARA SMARTPHONES*/
+@media (max-width: 767px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav a {
+        border-right: none;
+        border-bottom: 1px solid #ffff00;
+    }
+    
+    .dropdown-content {
+        position: static;
+        display: none;
+        border: none;
+        background-color: #222;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .main-wrapper {
+        flex-direction: column;
+    }
+
+    aside {
+        order: -1; /*MOVE O MENU LATERAL PARA CIMA*/
+    }
+
+    .checkbox-group,
+    .button-group,
+    .filter-group,
+    .project-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    button {
+        width: 100%;
+    }
+
+    .project-grid,
+    .skills-grid,
+    .tools-grid,
+    .stats-grid,
+    .tech-stack {
+        grid-template-columns: 1fr; /*uMA COLUNA PARA MINI TELAS*/
+    }
+}
+
+/*COMPUTADOR*/
+@media (min-width: 992px) {
+    .container {
+        padding: 30px;
+    }
+
+    header h1 {
+        font-size: 3em;
+    }
+
+    .main-wrapper {
+        gap: 30px;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+}

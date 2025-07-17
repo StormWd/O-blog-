@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="../Iscariotes/style/global.css">
+    <script src="../Iscariotes/Scripts/script.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="../Iscariotes/images/icon.ico">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>O blog</h1>
+            <p>Olá, seja muito bem-vindo.</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="#home" id="homeLink">Home</a>
+                    <section class="dropdown-content">
+                        <a href="#tech" class="category-filter" data-category="tech">Tecnologia</a>
+                        <a href="#software" class="category-filter" data-category="underground">Software</a>
+                        <a href="#hacking" class="category-filter" data-category="hacking">Hacking</a>
+                        <a href="#filosofia" class="category-filter" data-category="filosofia">Filosofia</a>
+                        <a href="#random" class="category-filter" data-category="random">Random</a>
+                    </section>
+                </li>
+                <li><a href="../Iscariotes/Pages/Development.html">Desenvolvimento</a></li>
+                <li><a href="../Iscariotes/Pages/About.html">Sobre</a></li>
+                <li><a href="../Iscariotes/Pages/Archive.html">Arquivo</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-wrapper">
+            <article>
+                <div id="postsContainer">
+                    <article class="post category-underground">
+                        <h2>A Morte da Internet Original</h2>
+                        <section class="post-meta">
+                            Postado em: 15/07/2025 | Por: Anônimo | Categoria: Underground
+                        </section>
+                        <p>
+                            A internet que conhecíamos morreu. Não com estrondo, mas com um gemido silencioso enquanto as corporações sugaram sua alma. 
+                            Onde antes havia fóruns anônimos e comunidades genuínas, agora temos algoritmos que decidem o que devemos ver e sentir.
+                        </p>
+                        <p>
+                            Lembro-me dos tempos em que cada site tinha sua própria identidade, seus próprios códigos e culturas. 
+                            Hoje, tudo é homogeneizado, sanitizado, corporativizado. O underground digital foi pavimentado com likes e shares.
+                        </p>
+                        <p>
+                            Mas ainda existem cantos escuros, lugares onde a verdadeira internet ainda respira. 
+                            É lá que encontramos a autenticidade perdida, longe dos holofotes das redes sociais mainstream.
+                        </p>
+                    </article>
+
+                    <article class="post category-filosofia">
+                        <h2>Linux é Para você?</h2>
+                        <section class="post-meta">
+                            Postado em: 10/06/2025 | Por: Anon | Categoria: Filosofia
+                        </section>
+                        <p>
+                            Sua máquina é um lixo e a culpa não é do hardware. É do sistema que te odeia.
+                            <br> > você instala Linux pra "testar"
+                            <br> > "ain, meu joguinho não abre"
+                            <br> > "cadê o instalador .exe?"
+                            <br> > chora e formata o PC de volta pro Windows em 24h
+                            <br>
+                            Provavelmente é assim que você pensa que alguém que usa linux age, não é? 
+                        </p>
+                        <p>
+                            A verdade é que Linux não é um clube de hackers. É basicamente um grupo de apoio 
+                            para gente teimosa. A "dor" de fazer o Wi-Fi funcionar não é um teste de QI, é um teste 
+                            de paciência pra ver se você é capaz de seguir um tutorial de 2009 escrito por um cara 
+                            chamado "ArchLordPinkPie69". Se você consegue, parabéns, você é oficialmente um de nós: Desempregados.
+                        </p>
+                        <p>
+                            Enquanto isso, o usuário de Windows está lá, feliz, achando que o PC é dele. Até o sistema
+                            decidir que 3 da manhã é a hora perfeita para uma atualização forçada que vai durar 2 
+                            horas e instalar o Tiktok pela nona vez...  XD
+                        </p>
+                    </article>
+                </div>
+
+                <section class="form-section">
+                    <h3>Postar no Terminal</h3>
+                    <form id="postForm">
+                        <div class="form-group">
+                            <label for="nome">Nome/Handle:</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="titulo">Título do Post:</label>
+                            <input type="text" id="titulo" name="titulo" required>
+                        </div>
+
+                        <section class="form-group">
+                            <label for="imagem">Imagem (opcional):</label>
+                            <input type="file" id="imagem" name="imagem" accept="image/*">
+                        </section>
+
+                        <section class="form-group">
+                            <label>Categorias:</label>
+                            <section class="checkbox-group">
+                                <label><input type="checkbox" name="categorias" value="hacking"> Hacking</label>
+                                <label><input type="checkbox" name="categorias" value="programming"> Programming</label>
+                                <label><input type="checkbox" name="categorias" value="underground"> Underground</label>
+                                <label><input type="checkbox" name="categorias" value="filosofia"> Filosofia</label>
+                                <label><input type="checkbox" name="categorias" value="vintage"> Vintage Tech</label>
+                            </section>
+                        </section>
+
+                        <section class="form-group">
+                            <label for="conteudo">Conteúdo:</label>
+                            <textarea id="conteudo" name="conteudo" placeholder="Digite o conteúdo do seu post aqui..." required></textarea>
+                        </section>
+
+                        <section class="button-group">
+                            <button type="submit">Postar</button>
+                            <button type="button" id="clearBtn">Limpar</button>
+                        </section>
+                    </form>
+
+                    <section id="successMessage" class="success-message">
+                        <p>Post enviado com sucesso! Aparecerá no topo da página.</p>
+                    </section>
+                </section>
+            </article>
+
+            <aside>
+                <article>
+                    <h3>Links Úteis</h3>
+                    <ul>
+                        <li><a href="#" >Archive.org</a></li>
+                        <li><a href="#" >Games</a></li>
+                        <li><a href="#" >Software</a></li>
+                        <li><a href="#" >Wikipedia</a></li>
+                        <li><a href="#" >ASCII</a></li>
+                    </ul>
+                </article>
+
+                <article>
+                    <h3>Posts Recentes</h3>
+                    <ul id="recentPosts">
+                        <li><a href="#">A Morte da Internet Original</a></li>
+                        <li><a href="#">Linux é para você?</a></li>
+                    </ul>
+                </article>
+
+                <article>
+                    <h3>Stats</h3>
+                    <ul>
+                        <li>Posts: <span id="postCount">2</span></li>
+                        <li>Visitantes: <span id="visitorCount">1</span></li>
+                        <li>Uptime: 99.9%</li>
+                        <li>Café: ∞ </li>
+                    </ul>
+                </article>
+            </aside>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Ifsp | Powered by the Fury |</p>
+        </footer>
+    </div>
+</body>
+</html>
